@@ -1,0 +1,30 @@
+% rg, ripgrep
+
+# Perform a recursive search for a given regular expression within the current directory
+rg <regex>
+
+# Execute a search that includes hidden files and files specified in .gitignore
+rg --no-ignore --hidden <regex>
+
+# Perform a case-insensitive search
+rg -i <regex>
+
+# Conduct a search only within specified subdirectories
+rg <regex> <subdirs>
+
+$ subdirs: ls -d */ | fzf
+
+# Search within files matching a specific glob pattern
+rg <regex> --glob=<glob>
+
+# Search for filenames that match a regular expression
+rg --files | rg <regex>
+
+# List only files where matches are found
+rg --files-with-matches <regex>
+
+# Show lines that do not match the regular expression
+rg --invert-match <regex>
+
+# Search for a literal string pattern
+rg --fixed-strings <string>

@@ -1,0 +1,4 @@
+% misc, bash
+
+# Copy last command to clipboard
+history | tail -n 2 | choose 1: | head -n 1 | copy

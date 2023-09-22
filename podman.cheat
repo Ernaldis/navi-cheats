@@ -1,0 +1,6 @@
+% podman, container
+
+# Run hadolint
+podman run -e "HOME=/" --rm -i docker.io/hadolint/hadolint hadolint - < <dockerfile>
+
+$ dockerfile: fd --no-ignore "Dockerfile" | fzf

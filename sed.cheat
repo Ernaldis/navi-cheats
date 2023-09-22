@@ -1,0 +1,9 @@
+% text-processing, sed
+
+# Replace 'old' with 'new'
+sed 's/old/new/g' <file>
+
+# Delete empty lines
+sed '/^$/d' <file>
+
+$ file: find . -type f -name "*.txt"

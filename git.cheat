@@ -1,0 +1,59 @@
+% git, code
+
+# Clone a repository
+git clone <repository_url>
+
+# Change branch
+git checkout <branch>
+
+$ branch: git branch --all | rg -o 'remotes/origin/\K.*' | fzf
+
+# Create a new branch
+git checkout -b <new_branch>
+
+# Undo the last commit
+git reset HEAD~
+
+# List all merged branches
+git branch --merged
+
+# Switch to a remote branch
+git checkout --track origin/<remote_branch>
+
+$ remote_branch: git branch -r | rg -o 'origin/\K.*' | fzf
+
+# Search the git log for a term
+git log --grep=<term>
+
+$ term: echo -e "fix\nfeature\nrefactor" | fzf
+
+# List tags
+git tag
+
+# Fetch latest changes from origin
+git fetch origin
+
+# Push changes to remote repository
+git push origin <current_branch>
+
+$ current_branch: git rev-parse --abbrev-ref HEAD
+
+# Rebase the current branch onto another branch
+git rebase <base_branch>
+
+$ base_branch: git branch | fzf
+
+# Delete a remote branch
+git push origin --delete <remote_branch_to_delete>
+
+$ remote_branch_to_delete: git branch -r | rg -o 'origin/\K.*' | fzf
+
+# Delete a local branch
+git branch -d <local_branch_to_delete>
+
+$ local_branch_to_delete: git branch | fzf
+
+# Pull latest changes and rebase
+git pull --rebase origin <current_branch>
+
+$ current_branch: git rev-parse --abbrev-ref HEAD

@@ -1,0 +1,42 @@
+% Rust
+
+## Cargo
+
+# Initialize a new Rust project
+cargo new --init <project_name>
+
+# Build the project
+cargo build
+
+# Run the project
+cargo run
+
+# Run tests
+cargo test
+
+# Update dependencies
+cargo update
+
+# Publish package to crates.io
+cargo publish
+
+# List installed cargo utilities
+cargo install --list
+
+# Install a specific package
+cargo binstall <package_name>
+
+## Bacon
+
+# Run bacon for the project
+bacon
+
+# Run bacon with specific profile
+bacon --profile <profile_name>
+
+$ profile_name: bacon --list-profiles | fzf
+
+# Run bacon for a specific task
+bacon --task <task_name>
+
+$ task_name: bacon --list-tasks | fzf

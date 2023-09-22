@@ -1,0 +1,68 @@
+% Procs
+
+# Display processes with AND logic for multiple keywords
+procs -a <keyword>
+
+# Display processes with OR logic for multiple keywords
+procs -o <keyword>
+
+# Display processes with NAND logic for multiple keywords
+procs -d <keyword>
+
+# Display processes with NOR logic for multiple keywords
+procs -r <keyword>
+
+# Show list of available columns
+procs -l
+
+# Show thread information
+procs --thread
+
+# Display processes in a tree view
+procs -t
+
+# Watch mode with default interval (1 second)
+procs -w
+
+# Watch mode with custom interval in seconds
+procs -W <second>
+
+$ second: echo "1 2 5 10" | fzf
+
+# Insert a column into the display
+procs -i <kind>
+
+# Show specified columns only
+procs --only <kind>
+
+# Sort columns by ascending order
+procs --sorta <kind>
+
+# Sort columns by descending order
+procs --sortd <kind>
+
+# Color mode [auto, always, disable]
+procs -c <COLOR>
+
+# Set theme [auto, dark, light]
+procs --theme <THEME>
+
+# Set pager mode [auto, always, disable]
+procs -p <PAGER>
+
+# Suppress header
+procs --no-header
+
+# Generate configuration sample file
+procs --gen-config
+
+# Print version information
+procs -V
+
+# Print help information
+procs -h
+
+$ kind: echo "pid ppid user stat" | fzf
+$ PAGER: echo "auto always disable" | fzf
+$ THEME: echo "auto dark light" | fzf
+$ COLOR: echo "auto always disable" | fzf
