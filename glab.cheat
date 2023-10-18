@@ -4,7 +4,7 @@
 glab auth login
 
 # Create a new merge request
-glab mr create --title=<title> --assignee=@me
+glab mr create --title="<title>" --assignee=@me
 
 # List open merge requests
 glab mr list
@@ -20,8 +20,6 @@ $ mr_id: glab mr list | rg -o 'ID: \K.*' | fzf
 # Close a merge request
 glab mr close <mr_id>
 
-$ mr_id: glab mr list | rg -o 'ID: \K.*' | fzf
-
 # Reopen a merge request
 glab mr reopen <mr_id>
 
@@ -34,8 +32,6 @@ $ mr_id: glab mr list | rg -o 'ID: \K.*' | fzf
 
 # Create a new issue
 glab issue create --title=<title> --assignee=@me
-
-$ title: echo -n "Enter issue title: " && read -r title_input && echo $title_input
 
 # List open issues
 glab issue list
@@ -51,8 +47,6 @@ $ issue_id: glab issue list | rg -o 'ID: \K.*' | fzf
 # Close an issue
 glab issue close <issue_id>
 
-$ issue_id: glab issue list | rg -o 'ID: \K.*' | fzf
-
 # Reopen an issue
 glab issue reopen <issue_id>
 
@@ -60,8 +54,6 @@ $ issue_id: glab issue list --closed | rg -o 'ID: \K.*' | fzf
 
 # Clone a repository
 glab repo clone <repository>
-
-$ repository: glab repo list | rg -o 'ID: \K.*' | fzf
 
 # Create a new repository
 glab repo create

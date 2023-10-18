@@ -13,10 +13,10 @@ bartib report --today
 bartib report --yesterday
 
 # List tasks under a project
-bartib report -p <project> | sd " \dh \d\dm$" "" | sd "\." "" | choose 0 -f "  " | tail -n +3 | head -n -3
+bartib report -p <project> | sd '(\d{1,2}h)?\s\d\dm$' '' | sd "\." "" | choose 0 -f "  " | tail -n +3 | head -n -3
 
 # Start previous task
 bartib start -p <project> -d "<description>"
 
 $ project: bartib projects | fzf
-$ description: bartib report -p <project> | sd " \dh \d\dm$" "" | sd "\." "" | choose 0 -f "  " | tail -n +3 | head -n -3 | fzf
+$ description: bartib report -p <project> | sd '(\d{1,2}h)?\s\d\dm$' '' | sd "\." "" | choose 0 -f "  " | tail -n +3 | head -n -3 | fzf
